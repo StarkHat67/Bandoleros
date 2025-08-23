@@ -8,7 +8,7 @@
   <meta property="og:title" content="Para Você, Meu Amor" />
   <meta property="og:description" content="Um pequeno site para demonstrar o meu amor." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://drive.google.com/file/d/17nRIhH9CeHwijdam2jmJTvVDC0j39eJP/view?usp=sharing" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Sacramento&display=swap" rel="stylesheet">
@@ -234,13 +234,17 @@ Teu menino 💕</p>
 
     // Galeria demo
     const g = document.getElementById('gallery');
-    [
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541534401786-2077eed87a62?q=80&w=1200&auto=format&fit=crop"
-    ].forEach(src=>{
-      const img = document.createElement('img'); img.loading='lazy'; img.alt='Nossa lembrança'; img.src=src; g.appendChild(img);
-    });
+[
+  "https://drive.google.com/uc?export=view&id=17nRIhH9CeHwijdam2jmJTvVDC0j39eJP",
+  "https://drive.google.com/uc?export=view&id=17nRIhH9CeHwijdam2jmJTvVDC0j39eJP",
+  "https://drive.google.com/uc?export=view&id=17nRIhH9CeHwijdam2jmJTvVDC0j39eJP"
+].forEach(src=>{
+  const img = document.createElement('img'); 
+  img.loading='lazy'; 
+  img.alt='Nossa lembrança'; 
+  img.src=src; 
+  g.appendChild(img);
+});
 
     // Countdown para o próximo aniversário
     function proximoAniversario(base){
