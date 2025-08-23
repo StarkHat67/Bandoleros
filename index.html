@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Você, Meu Amor</title>
+  <meta name="description" content="Um pequeno site-homenagem para o nosso amor." />
+  <meta property="og:title" content="Para Você, Meu Amor" />
+  <meta property="og:description" content="Um pequeno site-homenagem para o nosso amor." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #111827;
+      --soft: #1f2937;
+      --txt: #e5e7eb;
+      --muted: #9ca3af;
+      --brand: #ec4899;
+      --brand-2: #8b5cf6;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 800px at 80% -20%, rgba(236,72,153,.25), transparent 60%),
+      radial-gradient(1000px 700px at -10% 20%, rgba(139,92,246,.25), transparent 60%), var(--bg);
+      color:var(--txt); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6; letter-spacing:.2px;
+    }
+    header{
+      position:sticky; top:0; backdrop-filter: blur(8px);
+      background:rgba(11,15,20,.6); z-index:10; border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .wrap{max-width:1080px; margin:0 auto; padding:16px 20px}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800}
+    .logo{width:34px; height:34px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow: var(--shadow)}
+    .logo svg{width:20px; height:20px; fill:white}
+    .nav a{color:var(--txt); text-decoration:none; padding:8px 12px; border-radius:12px}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+
+    .hero{display:grid; place-items:center; text-align:center; padding:78px 20px 56px}
+    .hero h1{font-family:Sacramento, cursive; font-size:62px; line-height:1.1; margin:0 0 8px}
+    .hero p{max-width:680px; margin:0 auto 22px; color:var(--muted)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+    .btn{appearance:none; border:0; cursor:pointer; padding:14px 18px; border-radius:16px; font-weight:700}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:white; box-shadow: var(--shadow)}
+    .btn-ghost{background:rgba(255,255,255,.06); color:var(--txt)}
+
+    section{padding:28px 20px}
+    .card{background:rgba(17,24,39,.72); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); box-shadow:var(--shadow)}
+
+    .grid{display:grid; gap:18px}
+    @media (min-width: 768px){
+      .grid.cols-2{grid-template-columns: 1fr 1fr}
+      .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    }
+
+    .kpi{display:flex; flex-direction:column; align-items:center; padding:18px}
+    .kpi b{font-size:32px}
+    .kpi span{color:var(--muted); font-size:12px}
+
+    .timeline{position:relative; padding:28px}
+    .timeline:before{content:""; position:absolute; left:20px; top:0; bottom:0; width:2px; background:linear-gradient(var(--brand), var(--brand-2)); opacity:.5}
+    .event{display:grid; grid-template-columns:40px 1fr; gap:14px; margin:18px 0}
+    .dot{width:14px; height:14px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); margin:6px 0 0 14px; box-shadow:0 0 0 6px rgba(236,72,153,.15)}
+    .event h4{margin:0}
+    .event p{margin:6px 0 0; color:var(--muted)}
+
+    .gallery{display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:12px}
+    .gallery img{width:100%; height:220px; object-fit:cover; border-radius:16px; filter:saturate(1.1)}
+
+    .letter{padding:28px; font-size:20px; line-height:1.8; text-align:left; max-width:900px; margin:0 auto; white-space:pre-line}
+    .signature{font-family:Sacramento, cursive; font-size:42px; margin-top:12px; text-align:right}
+
+    .countdown{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; padding:22px}
+    .pill{padding:14px 18px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04)}
+    .pill b{font-size:22px}
+
+    footer{padding:40px 20px; text-align:center; color:var(--muted)}
+    footer a{color:var(--txt)}
+
+    .tag{font-size:12px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.438-9.5-9.25C1.5 7.938 4.063 5 7.25 5 9.188 5 10.813 6.125 12 7.75 13.188 6.125 14.813 5 16.75 5 19.938 5 22.5 7.938 21.5 11.75 19.5 16.563 12 21 12 21z"/></svg>
+          </div>
+          <span>Para Você</span>
+        </div>
+        <div class="nav">
+          <a href="#historia">História</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#carta">Carta</a>
+          <a href="#contador">Próximo aniversário</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="tag">Entrega de valor emocional</p>
+        <h1>Pra você, que transforma o caos em poesia</h1>
+        <p>Roadmap simples: eu, você, e o infinito possível. KPI do coração: crescer juntos, sprint após sprint, até que o tempo vire só cenário.</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="document.querySelector('#carta').scrollIntoView({behavior:'smooth'})">Ler a carta</button>
+          <a class="btn btn-ghost" href="#galeria">Ver lembranças</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="metricas">
+      <div class="wrap grid cols-3">
+        <div class="card kpi"><b id="dias"></b><span>Dias juntos</span></div>
+        <div class="card kpi"><b id="semanas"></b><span>Semanas sincronizados</span></div>
+        <div class="card kpi"><b id="meses"></b><span>Meses de compasso</span></div>
+      </div>
+    </section>
+
+    <section id="historia">
+      <div class="wrap card timeline">
+        <p class="tag">Linha do tempo</p>
+        <div class="event">
+          <div class="dot"></div>
+          <div>
+            <h4>Match perfeito</h4>
+            <p>Dia em que nossas estranhezas fizeram sinergia. Alinhamos propósito: distribuir afeto em escala.</p>
+          </div>
+        </div>
+        <div class="event">
+          <div class="dot"></div>
+          <div>
+            <h4>Primeiro encontro</h4>
+            <p>OKR: rir até doer a barriga. Resultado: superado com folga.</p>
+          </div>
+        </div>
+        <div class="event">
+          <div class="dot"></div>
+          <div>
+            <h4>Nosso segredo</h4>
+            <p>Um lugar, um som, um olhar — backlog de memórias que nunca vai pra arquivo morto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="wrap">
+        <p class="tag">Provas sociais do amor</p>
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </section>
+
+    <section id="carta">
+      <div class="wrap card letter">
+        <p class="tag">Carta aberta</p>
+        <p id="cartaTexto">[ Escreva aqui sua mensagem personalizada longa. Este espaço suporta textos extensos (500+ palavras) com espaçamento e formatação para leitura confortável. Pode usar múltiplos parágrafos, o layout já foi preparado para manter tudo legível. ]</p>
+        <div class="signature" id="assinatura">— [ Seu Nome ]</div>
+      </div>
+    </section>
+
+    <section id="contador">
+      <div class="wrap card">
+        <p class="tag" style="padding:0 28px">Contagem regressiva pro próximo aniversário</p>
+        <div class="countdown" id="countdown"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Feito com ❤️ por <span id="autor">Stark</span>.
+  </footer>
+
+  <script>
+    // Utilidades de data
+    function parseISO(d){const [Y,M,D]=d.split('-').map(Number); return new Date(Y, M-1, D)}
+    function diffInDays(a,b){const ms=24*60*60*1000; return Math.floor((b-a)/ms)}
+
+    // Preenche métricas
+    const start = parseISO("2023-09-14");
+    const now = new Date();
+    const dias = diffInDays(start, now);
+    const semanas = Math.floor(dias/7);
+    const meses = Math.floor(dias/30.4375);
+    document.getElementById('dias').textContent = dias + "+";
+    document.getElementById('semanas').textContent = semanas + "+";
+    document.getElementById('meses').textContent = meses + "+";
+
+    // Galeria demo
+    const g = document.getElementById('gallery');
+    [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541534401786-2077eed87a62?q=80&w=1200&auto=format&fit=crop"
+    ].forEach(src=>{
+      const img = document.createElement('img'); img.loading='lazy'; img.alt='Nossa lembrança'; img.src=src; g.appendChild(img);
+    });
+
+    // Countdown para o próximo aniversário
+    function proximoAniversario(base){
+      const hoje = new Date();
+      let ano = hoje.getFullYear();
+      const candidato = new Date(ano, base.getMonth(), base.getDate());
+      if(candidato < hoje){ ano += 1 }
+      return new Date(ano, base.getMonth(), base.getDate());
+    }
+    const alvo = proximoAniversario(start);
+    function renderCountdown(){
+      const el = document.getElementById('countdown');
+      const ms = alvo - new Date();
+      if(ms <= 0){ el.textContent = 'Chegou! Feliz nós!'; return }
+      const s = Math.floor(ms/1000), m = Math.floor(s/60), h = Math.floor(m/60), d = Math.floor(h/24);
+      const hh = h%24, mm = m%60, ss = s%60;
+      el.innerHTML = '';
+      const parts = [
+        ['dias', d], ['horas', hh], ['minutos', mm], ['segundos', ss]
+      ];
+      parts.forEach(([label,val])=>{
+        const pill = document.createElement('div'); pill.className='pill';
+        pill.innerHTML = `<b>${String(val).padStart(2,'0')}</b><div class=\"mini\">${label}</div>`;
+        el.appendChild(pill);
+      })
+    }
+    renderCountdown(); setInterval(renderCountdown, 1000);
+  </script>
+</body>
+</html>
