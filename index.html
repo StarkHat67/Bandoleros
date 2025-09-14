@@ -218,60 +218,53 @@ Teu menino 💕</p>
   </footer>
 
   <script>
-    // Utilidades de data
-    function parseISO(d){const [Y,M,D]=d.split('-').map(Number); return new Date(Y, M-1, D)}
-    function diffInDays(a,b){const ms=24*60*60*1000; return Math.floor((b-a)/ms)}
+    // Data alvo fixa
+    const alvo = new Date(2025, 8, 15); // mês começa em 0 → 8 = setembro
+    const hoje = new Date();
 
-    // Preenche métricas
-    const start = parseISO("2025-09-15");
-    const now = new Date();
-    const dias = diffInDays(start, now);
-    const semanas = Math.floor(dias/7);
-    const meses = Math.floor(dias/30.4375);
-    document.getElementById('dias').textContent = dias + "+";
-    document.getElementById('semanas').textContent = semanas + "+";
-    document.getElementById('meses').textContent = meses + "+";
+    // Diferença em dias
+    const msDia = 24*60*60*1000;
+    const dias = Math.floor((alvo - hoje) / msDia);
+    const semanas = Math.floor(dias / 7);
+    const meses = Math.floor(dias / 30.4375);
+
+    document.getElementById('dias').textContent = (dias > 0 ? dias + "+" : "0") ;
+    document.getElementById('semanas').textContent = (semanas > 0 ? semanas + "+" : "0") ;
+    document.getElementById('meses').textContent = (meses > 0 ? meses + "+" : "0") ;
 
     // Galeria demo
     const g = document.getElementById('gallery');
-[
-  "https://i.imgur.com/GRaKylo.jpeg",
-  "https://i.imgur.com/GRaKylo.jpeg",
-  "https://i.imgur.com/GRaKylo.jpeg"
-].forEach(src=>{
-  const img = document.createElement('img'); 
-  img.loading='lazy'; 
-  img.alt='Nossa lembrança'; 
-  img.src=src; 
-  g.appendChild(img);
-});
+    [
+      "https://i.imgur.com/GRaKylo.jpeg",
+      "https://i.imgur.com/GRaKylo.jpeg",
+      "https://i.imgur.com/GRaKylo.jpeg"
+    ].forEach(src=>{
+      const img = document.createElement('img'); 
+      img.loading='lazy'; 
+      img.alt='Nossa lembrança'; 
+      img.src=src; 
+      g.appendChild(img);
+    });
 
-    // Countdown para o próximo aniversário
-    function proximoAniversario(base){
-      const hoje = new Date();
-      let ano = hoje.getFullYear();
-      const candidato = new Date(ano, base.getMonth(), base.getDate());
-      if(candidato < hoje){ ano += 1 }
-      return new Date(ano, base.getMonth(), base.getDate());
-    }
-    const alvo = proximoAniversario(start);
-    function renderCountdown(){
-      const el = document.getElementById('countdown');
+    // Countdown
+    function renderCountdown() {
       const ms = alvo - new Date();
+      const el = document.getElementById('countdown');
       if(ms <= 0){ el.textContent = 'Chegou! Feliz nós!'; return }
       const s = Math.floor(ms/1000), m = Math.floor(s/60), h = Math.floor(m/60), d = Math.floor(h/24);
       const hh = h%24, mm = m%60, ss = s%60;
       el.innerHTML = '';
-      const parts = [
-        ['dias', d], ['horas', hh], ['minutos', mm], ['segundos', ss]
-      ];
+      const parts = [['dias', d], ['horas', hh], ['minutos', mm], ['segundos', ss]];
       parts.forEach(([label,val])=>{
-        const pill = document.createElement('div'); pill.className='pill';
-        pill.innerHTML = `<b>${String(val).padStart(2,'0')}</b><div class=\"mini\">${label}</div>`;
+        const pill = document.createElement('div'); 
+        pill.className='pill';
+        pill.innerHTML = `<b>${String(val).padStart(2,'0')}</b><div class="mini">${label}</div>`;
         el.appendChild(pill);
-      })
+      });
     }
-    renderCountdown(); setInterval(renderCountdown, 1000);
+    renderCountdown(); 
+    setInterval(renderCountdown, 1000);
   </script>
 </body>
 </html>
+
