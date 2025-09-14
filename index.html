@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
@@ -8,9 +8,9 @@
   <meta property="og:title" content="Para Você, Meu Amor" />
   <meta property="og:description" content="Um pequeno site para demonstrar o meu amor." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="h" />
-  <link rel="preconnect" href="com">
-  <link rel="preconnect" href="hcom" crossorigin>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Sacramento&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -156,71 +156,14 @@ Amar-te é habitar o infinito em sua plenitude,
           <div class="dot"></div>
           <div>
             <h4>Primeiro encontro</h4>
-            <p>No instante em que o tempo suspendeu seu curso,
-E a aurora sussurrou segredos de ouro nas frestas da alma,
-Meus olhos encontraram os teus, luz serena e indômita,
-E o mundo, por um breve segundo, curvou se à tua presença.
-
-Teu sorriso, delicado e imponente,
-Fez se poema que minhas mãos não ousam tocar,
-E a voz que rompeu o silêncio
-Soou como sinfonia de eternidade contida.
-
-Caminhamos, entre palavras ainda tímidas,
-Por trilhas que só a sorte tece para os corações atentos,
-E cada gesto teu um eclipse de graça
-Despertava em mim a convicção do que é sublime.
-
-Sei que este momento, tão fugaz quanto a brisa,
-Rasga em nós uma eternidade secreta,
-E guardo em meu peito, como relicário sagrado,
-A memória de teu olhar, que fez do mundo, por instantes, meu paraíso.
-
-Ah, minha dama, que neste primeiro encontro
-Teus passos se entrelacem aos meus sonhos,
-Pois cada instante contigo é um verso ainda não escrito,
-E cada suspiro, promessa de poesia sem fim.</p>
+            <p>Hoje, te conhecendo de perto, eu percebi que cada minuto valeu a pena só pra chegar nesse momento com você.</p>
           </div>
         </div>
         <div class="event">
           <div class="dot"></div>
           <div>
             <h4>Nosso segredo</h4>
-            <p>Há em nós um pacto velado,
-um sopro que a aurora não ousa pronunciar,
-um laço tecido no silêncio,
-onde a palavra se cala, mas o coração proclama.
-
-Nosso segredo vive na penumbra suave dos gestos,
-na delicadeza de um olhar que se demora,
-na brisa que toca e não se explica,
-na música oculta que apenas nós sabemos ouvir.
-
-É o murmúrio de um universo contido,
-a promessa não dita,
-a centelha guardada entre as mãos do destino,
-e que, mesmo oculta, ilumina nossas noites.
-
-Que importa o mundo, com seus olhos curiosos?
-Que importam as vozes, que julgam sem conhecer?
-Nosso segredo é templo inviolável,
-refúgio onde apenas tu e eu somos verdade.
-
-Ele não precisa de testemunhas,
-nem de ornamentos, nem de coroas.
-Basta o sopro de tua presença
-e o eco da minha alma que te reconhece.
-
-Nosso segredo é humano,
-feito de medos e de sonhos,
-de silêncios carregados de ternura,
-e de ausências que se transformam em saudade doce.
-
-E ainda que o tempo passe,
-ainda que os dias se desfaçam em pó,
-guardaremos no íntimo esse relicário invisível:
-um segredo tão vasto quanto o céu,
-tão eterno quanto a memória do amor.</p>
+            <p>Só a gente sabe o quanto um simples olhar já diz tudo sem precisar de palavras.</p>
           </div>
         </div>
       </div>
@@ -275,19 +218,18 @@ Teu menino 💕</p>
   </footer>
 
   <script>
-    // Data alvo fixa
-    const alvo = new Date(2025, 8, 15); // mês começa em 0 → 8 = setembro
+    // ===== Apenas Dias Juntos =====
+    const inicio = new Date(2023, 7, 13); // 13/08/23
     const hoje = new Date();
 
-    // Diferença em dias
     const msDia = 24*60*60*1000;
-    const dias = Math.floor((alvo - hoje) / msDia);
+    const dias = Math.floor((hoje - inicio) / msDia);
     const semanas = Math.floor(dias / 7);
     const meses = Math.floor(dias / 30.4375);
 
-    document.getElementById('dias').textContent = (dias > 0 ? dias + "+" : "0") ;
-    document.getElementById('semanas').textContent = (semanas > 0 ? semanas + "+" : "0") ;
-    document.getElementById('meses').textContent = (meses > 0 ? meses + "+" : "0") ;
+    document.getElementById('dias').textContent = (dias > 0 ? dias + "+" : "0");
+    document.getElementById('semanas').textContent = (semanas > 0 ? semanas + "+" : "0");
+    document.getElementById('meses').textContent = (meses > 0 ? meses + "+" : "0");
 
     // Galeria demo
     const g = document.getElementById('gallery');
@@ -303,11 +245,12 @@ Teu menino 💕</p>
       g.appendChild(img);
     });
 
-    // Countdown
+    // ===== Countdown mantém como estava =====
+    const alvo = new Date(2025, 8, 15); // 15/09/25
     function renderCountdown() {
       const ms = alvo - new Date();
       const el = document.getElementById('countdown');
-      if(ms <= 0){ el.textContent = 'Chegou! Feliz nós!'; return }
+      if(ms <= 0){ el.textContent = 'Chegou! Feliz Aniversário Vitória!'; return }
       const s = Math.floor(ms/1000), m = Math.floor(s/60), h = Math.floor(m/60), d = Math.floor(h/24);
       const hh = h%24, mm = m%60, ss = s%60;
       el.innerHTML = '';
@@ -324,4 +267,3 @@ Teu menino 💕</p>
   </script>
 </body>
 </html>
-
